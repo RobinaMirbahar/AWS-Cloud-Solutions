@@ -22,7 +22,8 @@ def write_to_parquet(data, s3_bucket, s3_key):
     s3.upload_fileobj(buffer, s3_bucket, s3_key)
     
     
-This code creates a PyArrow Table from your data, writes it to a Parquet file in memory using the pq.write_table() method, and then uploads the file to S3 using the s3.upload_fileobj() method.
+This code creates a PyArrow Table from your data, writes it to a Parquet file in memory using the pq.write_table() method, 
+and then uploads the file to S3 using the s3.upload_fileobj() method.
 
 To append to an existing Parquet file, you can use the pq.ParquetWriter() method with the append=True option, like this:
 
@@ -34,4 +35,8 @@ def append_to_parquet(data, s3_bucket, s3_key):
     s3 = boto3.client('s3')
     with pq.ParquetWriter('s3://{}/{}'.format(s3_bucket, s3_key), table.schema, compression='snappy', filesystem=s3, append=True) as writer:
         writer.write_table(table)
-This code opens an existing Parquet file in S3 using the pq.ParquetWriter() method with append=True, and then writes the PyArrow Table to it using the writer.write_table() method.
+        
+        
+This code opens an existing Parquet file in S3 using the pq.ParquetWriter() method with append=True, 
+and then writes the PyArrow Table to it using the writer.write_table() method.
+
