@@ -1,6 +1,9 @@
 To write data to S3 in Parquet format from inside an AWS Lambda function, you can use the pyarrow library in Python or the aws-sdk library in TypeScript.
 
 Here's an example implementation in Python:
+
+## Usage/Examples
+
 import pyarrow as pa
 import pyarrow.parquet as pq
 import boto3
