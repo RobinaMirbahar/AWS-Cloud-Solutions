@@ -11,8 +11,7 @@
 
 ## Have any Questions?
 
-Want to request a new topic for a demo? Open an Issue
+Want to request a new topic for a demo? [Open an Issue](https://github.com/RobinaMirbahar/Google-Cloud-Solutions/issues/new/choose)
 
 ## Want to Contribute? Open a Pull Request!
 
-Want to Contribute? Open a Pull Request
