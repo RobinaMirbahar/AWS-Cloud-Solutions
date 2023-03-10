@@ -1,5 +1,5 @@
 <div align="center"> 
-   <h2 align="center"> Google Cloud Soultions  </h2></div>
+   <h2 align="center"> AWS Cloud Soultions  </h2></div>
    
 <p align='center'>
    <p align='center'>
