@@ -21,3 +21,23 @@ subscription Subscribe($name: String!) {
 
 
 This should properly define the subscription query and allow the API.graphql call to work as intended.
+
+
+
+Modfied code 
+const subscribe = (name, next, error) => {
+    console.log("call subscribe")
+    const subscribeDoc = `subscription Subscribe($name: String!) {
+        subscribe(name: $name) {
+            data
+            name
+        }
+    }`;
+    return API.graphql(graphqlOperation(subscribeDoc, { name })).subscribe({
+        next: ({ provider, value }) => {
+            next(value.data.subscribe, provider, value)
+        },
+        error: console.log,
+    })
+} 
+
