@@ -1,0 +1,23 @@
+Use a GraphQL query template literal to define the subscription query:
+
+const subscribeDoc = `
+subscription SubscribeToChannel($name: String!) {
+    subscribe(name: $name) {
+        data
+        name
+    }
+}
+`;
+
+Instead of using Javascrtipt 
+
+const subscribeDoc = 
+subscription Subscribe($name: String!) {
+    subscribe(name: $name) {
+        data
+        name
+    }
+}
+
+
+This should properly define the subscription query and allow the API.graphql call to work as intended.
