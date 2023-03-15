@@ -10,6 +10,9 @@
 
 - <a href="https://github.com/RobinaMirbahar/AWS-Cloud-Solutions/blob/main/Ingest%20Prometheus%20logs%20from%20TeamCity%20into%20Cloudwatch%3F">Ingest Prometheus logs from TeamCity into Cloudwatch</a>
 
+- <a href="https://github.com/RobinaMirbahar/AWS-Cloud-Solutions/blob/main/Attach%20Public%20IP%20Addresses%20to%20network%20Interface%20Boto3.py">Attach Public IP Addresses to network Interface Boto3</a>
+
+
 ## Have any Questions?
 
 Want to request a new topic for a demo? [Open an Issue](https://github.com/RobinaMirbahar/Google-Cloud-Solutions/issues/new/choose)
