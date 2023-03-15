@@ -61,4 +61,6 @@ View the metrics in CloudWatch:
 
 After a few minutes, you should be able to view the metrics in CloudWatch under the log group you specified in the configuration file.
 
-In summary, you need to create an IAM role with the appropriate policies, install and configure the CloudWatch agent, and transform the Prometheus metrics to CloudWatch metrics. Once everything is set up, the CloudWatch agent will start sending the metrics to CloudWatch, where you can view and analyze them.
+In summary, you need to create an IAM role with the appropriate policies, install and configure the CloudWatch agent,
+and transform the Prometheus metrics to CloudWatch metrics. Once everything is set up, the CloudWatch agent will start sending 
+the metrics to CloudWatch, where you can view and analyze them.
