@@ -1,0 +1,64 @@
+Configure the CloudWatch agent by creating a configuration file in JSON format. In the configuration file, you need to specify the following:
+
+The log group name where you want to store the metrics
+The location of the Prometheus metrics endpoint
+The format of the Prometheus metrics
+
+Here is an example configuration file:
+
+{
+  "agent": {
+    "metrics_collection_interval": 60,
+    "run_as_user": "root"
+  },
+  "logs": {
+    "logs_collected": {
+      "files": {
+        "collect_list": [
+          {
+            "file_path": "/dev/null",
+            "log_group_name": "my-log-group-name",
+            "log_stream_name": "{instance_id}-my-log-stream-name",
+            "metric_transformations": [
+              {
+                "metric_namespace": "TeamCity",
+                "metric_name": "MyMetric",
+                "metric_value": "$1",
+                "metric_unit": "Count",
+                "metric_timestamp": "$2"
+              }
+            ],
+            "timestamp_format": "%Y-%m-%dT%H:%M:%S.%fZ",
+            "timezone": "UTC"
+          }
+        ]
+      }
+    }
+  },
+  "metrics": {
+    "append_dimensions": {
+      "AutoScalingGroupName": "${aws:AutoScalingGroupName}",
+      "InstanceId": "${aws:InstanceId}",
+      "InstanceType": "${aws:InstanceType}"
+    },
+    "metrics_collected": {
+      "prometheus": {
+        "prometheus_config_path": "/etc/cloudwatch-config/prometheus.yml",
+        "ecs_service_metrics_collection_interval": 60
+      }
+    }
+  }
+}
+
+The metric_transformations section is used to transform the Prometheus metrics to CloudWatch metrics.
+
+Start the CloudWatch agent:
+
+Start the CloudWatch agent using the configuration file you created in the previous step. 
+Once the agent is running, it will start collecting metrics from the Prometheus endpoint and send them to CloudWatch.
+
+View the metrics in CloudWatch:
+
+After a few minutes, you should be able to view the metrics in CloudWatch under the log group you specified in the configuration file.
+
+In summary, you need to create an IAM role with the appropriate policies, install and configure the CloudWatch agent, and transform the Prometheus metrics to CloudWatch metrics. Once everything is set up, the CloudWatch agent will start sending the metrics to CloudWatch, where you can view and analyze them.
