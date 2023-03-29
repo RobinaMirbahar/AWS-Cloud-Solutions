@@ -1,0 +1,36 @@
+YAML manifest that creates a Role that allows a user or ServiceAccount to list secrets in the "review" namespace:
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: secret-reader
+  namespace: review
+rules:
+- apiGroups: [""]
+  resources: ["secrets"]
+  verbs: ["get", "list"]
+
+To create the Role, you can apply the YAML manifest using the kubectl apply command:
+
+kubectl apply -f role.yaml
+
+Once the Role is created, you can bind it to the user or user's ServiceAccount using a RoleBinding or ClusterRoleBinding:
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: secret-reader-binding
+  namespace: review
+subjects:
+- kind: User
+  name: <username>
+- kind: ServiceAccount
+  name: <serviceaccount>
+  namespace: <namespace>
+roleRef:
+  kind: Role
+  name: secret-reader
+  apiGroup: rbac.authorization.k8s.io
+
+Replace <username> with the name of the user, <serviceaccount> with the name of the ServiceAccount, 
+and <namespace> with the namespace where the ServiceAccount is located. Apply the RoleBinding YAML manifest using the kubectl apply command:
+kubectl apply -f rolebinding.yaml
+
