@@ -6,7 +6,8 @@
 ![Author](https://img.shields.io/badge/Author-Robina_Mirbahar-181717?style=for-the-badge&logo=github&logoColor=white)
 
 > **Author & Architect:** [Robina Mirbahar](https://github.com/RobinaMirbahar) ([Google Developer Expert in Cloud & AI](https://developers.google.com/profile/u/106918534005910641104?utm_campaign=deveco_gdemembers&utm_source=deveco) · Google Cloud Champion Innovator · Co-Author of [*AI Engineering*](https://www.amazon.com/dp/B0GWCZWCF4))  
-> **Focus:** Reference Architectures, Serverless Microservices & High-Availability Cloud Patterns Across AWS & Multi-Cloud Environments
+> 📚 **Architecture Track:** Multi-Cloud & AWS Serverless Reference Architectures and High-Availability Blueprints  
+> **Core Stack:** AWS Lambda, API Gateway, DynamoDB, S3, CloudFormation / IaC, and Multi-Cloud Integration Patterns.
 
 ---
 
